@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Click the button to display an alert box.</p>
+  <button onclick="notify()">Try it</button>
+  <p id="name"></p>
+  <p id="city"></p>
+  <p id="mobile"></p>
+  <p id="job"></p>
+  <p id="email"></p>
+  <p id="adress"></p>
+  <p id="age"></p>
+  <div style = "display: none;"  id = "next">
+    <button>
+    Bước tiếp theo
+    </button>
+  </div>
+
+  <script>
+    function notify() {
+      alert("Chào mừng đến với ứng dụng Javascript đầu tiên");
+      var name = prompt("Hãy nhập tên của bạn", "");
+      var city = prompt("Hãy nhập thành phố bạn đang sống", "");
+      var mobile = prompt("Hãy nhập số điện thoại của bạn", "");
+      var job = prompt("Hãy nhập công việc của bạn", "");
+      var email = prompt("Hãy nhập địa chỉ email của bạn", "");
+      var adress = prompt("Hãy nhập địa chỉ của bạn", "");
+      var age = prompt("Hãy nhập năm sinh", "");
+      var ageBorn = new Date().getFullYear();
+
+      if (name != null) {
+        document.getElementById("name").innerHTML = "Tên của tôi: " + name;
+      }
+      if (city != null) {
+        document.getElementById("city").innerHTML = "Thành phố tôi đang sống: " + city;
+      }
+      if (mobile != null) {
+        document.getElementById("mobile").innerHTML = "Số điện thoại của tôi: " + mobile;
+      }
+      if (job != null) {
+        document.getElementById("job").innerHTML = "Công việc của tôi: " + job;
+      }
+      if (email != null) {
+        document.getElementById("email").innerHTML = "Địa chỉ email của tôi: " + email;
+      }
+      if (adress != null) {
+        document.getElementById("adress").innerHTML = "Địa chỉ của tôi: " + adress;
+      }
+      if (age < ageBorn && age != null) {
+      document.getElementById("age").innerHTML = "Tuổi của tôi: " + (ageBorn - age) + " tuổi";
+      }
+      while (age >= ageBorn || age == null) {
+      	age = prompt("Hãy nhập lại năm sinh", "");
+        document.getElementById("age").innerHTML = "Tuổi của tôi: " + (ageBorn - age) + " tuổi";
+      }
+      document.getElementById("next").style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
